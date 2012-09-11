@@ -14,7 +14,7 @@ import pprint
 #				7) Create a user object that has username & current screenname
 ###
 
-nickname = 'blind_harry'
+nickname = 'jkarry'
 
 class ScoreBotter(pyrc.Bot):
 	users = []
@@ -75,5 +75,5 @@ class ScoreBotter(pyrc.Bot):
 			del self.scores[nick]
 
 if __name__ == '__main__':
-	bot = ScoreBotter('irc.freenode.net', channels = ['#test-scorebot'], nick = nickname)
+	bot = ScoreBotter('irc.freenode.net', channels = ['#hackerschool'], nick = nickname)
 	bot.connect()
