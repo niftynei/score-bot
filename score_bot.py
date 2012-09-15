@@ -15,6 +15,8 @@ import pprint
 ###
 
 nickname = 'jkarry'
+channels = ['#hackerschool']
+
 
 class ScoreBotter(pyrc.Bot):
 	users = []
@@ -26,7 +28,7 @@ class ScoreBotter(pyrc.Bot):
 		scrs = ''
 		for score in self.scores:
 			if self.scores[score] != 0:
-				scrs += "%s-%s " %(score, self.scores[score])
+				scrs += "%s:%s " %(score, self.scores[score])
 		if scrs == '':
 			scrs = 'None'
 		self.message(channel, "Scores: %s" %(scrs))
@@ -75,5 +77,5 @@ class ScoreBotter(pyrc.Bot):
 			del self.scores[nick]
 
 if __name__ == '__main__':
-	bot = ScoreBotter('irc.freenode.net', channels = ['#hackerschool'], nick = nickname)
+	bot = ScoreBotter('irc.freenode.net', channels = channels, nick = nickname)
 	bot.connect()
